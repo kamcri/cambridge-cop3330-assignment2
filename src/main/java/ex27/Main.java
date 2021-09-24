@@ -30,7 +30,7 @@ public class Main
     {
         boolean result = true;
 
-        Pattern p = Pattern.compile("[a-zA-Z]{2}[-]\d{4}");
+        Pattern p = Pattern.compile("[a-zA-Z]{2}[-]{1}[0-9]{4}");
         Matcher m = p.matcher(empID);
         if(!empID.equals(p))
         {
