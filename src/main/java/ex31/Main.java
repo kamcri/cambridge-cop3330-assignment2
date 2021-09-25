@@ -4,18 +4,31 @@
  */
 package ex31;
 import java.util.Scanner;
+import java.lang.String;
 public class Main
 {
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
-        int restPulse, age;
+        int restPulse = 0, age = 0;
         double targetHR;
 
-        System.out.println("What is your age: ");
-        age = sc.nextInt();
-        System.out.println("What is your resting heart rate: ");
-        restPulse = sc.nextInt();
+        while(age < 1)
+        {
+            System.out.println("What is your age: ");
+            age = sc.nextInt();
+
+            if(age < 1)
+                System.out.println("Invalid age.");
+        }
+        while (restPulse < 1)
+        {
+            System.out.println("What is your resting heart rate: ");
+            restPulse = sc.nextInt();
+
+            if(restPulse < 1)
+                System.out.println("Invalid heart rate.");
+        }
 
         System.out.printf("Resting Pulse: %d  Age: %d\n", restPulse, age);
         System.out.println("Intensity   | Rate");
