@@ -17,7 +17,6 @@ public class Main
         Random random = new Random();
         String randomPassword = " " ;
 
-
         System.out.println("What's the minimum length?");
         length = sc.nextInt();//8
         System.out.println("How many special characters?");
@@ -25,6 +24,12 @@ public class Main
         System.out.println("How many numbers?");
         numbers = sc.nextInt();//2
 
+        //
+        for(int i = 0; i >=length; i++)
+        {
+            //adding the special characters
+            //adding the numbers
+        }
         List<Integer> listCharacters = new ArrayList<Integer>();
         listCharacters.add(specialCh);
         List<Integer> listNumbers = new ArrayList<Integer>();
@@ -32,9 +37,8 @@ public class Main
 
         while(listNumbers.size() < numbers)
         {
-            x = random.nextInt(100);
+            x = random.nextInt(10);
             listNumbers.add(x);
         }
-        System.out.println("Contents of list:" +listNumbers);
     }
 }
