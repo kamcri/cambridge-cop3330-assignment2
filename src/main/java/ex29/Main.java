@@ -4,15 +4,11 @@
  */
 package ex29;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 public class Main {
     static boolean isNumber(String input)
     {
-        boolean result = true;
-        Pattern p = Pattern.compile("^[0-9]*$");
-        Matcher m = p.matcher(input);
-        if(!input.equals(p))
+        String regex = "^[0-9]+$";
+        if(!input.matches(regex))
         {
             System.out.println("Please enter a number.");
             return false;
@@ -21,21 +17,29 @@ public class Main {
     }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String rate = "";
-        boolean isNum = isNumber(rate);
+        String rate;
+        int years;
 
-        while (rate.isEmpty())
+        while (true)
         {
             System.out.println("What is the rate of return?");
             rate = sc.nextLine();
-            if (rate == "0")
+            boolean isNum = isNumber(rate);
+            if (isNum);//check if it is a number
             {
-                System.out.println("Sorry. That's not a valid input.");
+                if(rate == "0")//is it zero
+                {
+                    System.out.println("Sorry. That's not a valid input.");
+                    sc.next();
+                }
+                else
+                {
+                    int r = Integer.parseInt(rate);
+                    years = 72 / r;
+                    break;
+                }
             }
         }
-        int r = Integer.parseInt(rate);
-        int years = 72 / r;
         System.out.println("It will take " +years+" years to double your initial investment.");
     }
-
 }
