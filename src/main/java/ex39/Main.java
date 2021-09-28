@@ -3,16 +3,12 @@
  *  Copyright 2021 Kameryn Cambridge
  */
 package ex39;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args)
     {
-
-        HashMap<String, String> myMap = new HashMap<>();
+        Map<String,String> myMap = new HashMap<>();
 
         myMap.put("John Johnson", "Manager");
         myMap.put("Tou Xiong", "Software Engineer");
@@ -29,7 +25,7 @@ public class Main {
 
         TreeSet<String> sortedKeys = new TreeSet<>(positions);
 
-        System.out.printf("%nMap contains:%nName\t\t\t\t|Position\t\t\t |Separation Date%n");
+        System.out.printf("Name\t\t\t\t|Position\t\t\t |Separation Date%n");
         System.out.println("--------------------|--------------------|-----------------");
         for(String position : sortedKeys)
         {
