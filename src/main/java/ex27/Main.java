@@ -30,9 +30,8 @@ public class Main
     {
         boolean result = true;
 
-        Pattern p = Pattern.compile("[a-zA-Z]{2}[-]{1}[0-9]{4}");
-        Matcher m = p.matcher(empID);
-        if(!empID.equals(p))
+        String regex = "[a-zA-Z]{2}[-][0-9]{4}";
+        if(!empID.matches(regex))
         {
             valid = valid + "The employee ID must be in the format of AA-1234.\n";
             return false;
