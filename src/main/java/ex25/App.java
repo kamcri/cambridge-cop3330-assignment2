@@ -12,7 +12,7 @@ public class App
         String regex = "^[0-9]+$";
         String regex2 = "^[a-zA-Z]+$";
         String regex3 = "^[a-zA-Z0-9]+";
-        String regex4 = "[a-zA-Z-9\\cX]+$";
+        String regex4 = "^[a-zA-Z-9\\cX]+$";
         if(password.length() < 8) {
             if (password.matches(regex)) {
                 return 1;
